@@ -1,4 +1,4 @@
-package com.yuvraj.util;
+package com.yuvraj.util.json;
 
 /**
  * @author Yuvraj

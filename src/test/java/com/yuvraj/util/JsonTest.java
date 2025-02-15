@@ -1,10 +1,9 @@
 package com.yuvraj.util;
 
+import com.yuvraj.util.json.Json;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class JsonTest {
 
@@ -31,6 +30,10 @@ class JsonTest {
 
     @Test
     void decode() {
+        Employee e = new Employee(1, "Yuvraj", 23);
+        String encoded = json.encode(e);
+        Employee emp = json.decode(encoded, Employee.class);
+        System.out.println(emp.toString());
     }
 
     @Test
@@ -46,6 +49,10 @@ class Employee {
     int id;
     String name;
     int age;
+
+    public Employee() {
+
+    }
 
     public Employee(int id, String name, int age) {
         this.id = id;
@@ -75,5 +82,14 @@ class Employee {
 
     public void setAge(int age) {
         this.age = age;
+    }
+
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", age=" + age +
+                '}';
     }
 }

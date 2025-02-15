@@ -1,4 +1,4 @@
-package com.yuvraj.util;
+package com.yuvraj.util.json;
 
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
