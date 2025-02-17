@@ -25,6 +25,18 @@ publishing {
             version = '1.0.0'
         }
     }
+
+    repositories {
+        mavenLocal()
+        maven {
+            name = "GitLab"
+            url = uri(project.findProperty("gitlab.repo.url"))
+            credentials {
+                username = project.findProperty("gitlab.user")
+                password = project.findProperty("gitlab.key")
+            }
+        }
+    }
 }
 
 test {
